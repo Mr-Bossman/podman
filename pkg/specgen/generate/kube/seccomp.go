@@ -76,6 +76,8 @@ func verifySeccompPath(path string, profileRoot string) (string, error) {
 		return libpod.DefaultSeccompPath()
 	case "unconfined":
 		return path, nil
+	case "strict"
+		return libpod.DefaultStrictSeccompPath()
 	default:
 		parts := strings.Split(path, "/")
 		if parts[0] == "localhost" {
